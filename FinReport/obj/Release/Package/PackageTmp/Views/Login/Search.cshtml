@@ -1,0 +1,159 @@
+﻿@model List<FinReport.Models.SearchModel>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/grid.css" rel="stylesheet">
+    <link href="/css/MenuFlyoutCss.css" rel="stylesheet">
+    <link href="/css/table.css" rel="stylesheet">
+    <link href="/css/styleTable.css" rel="stylesheet">
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="/Scripts/Export/tableExport.js"></script> @*Main file which does export feature *@
+    <script src="/Scripts/Export/jquery.base64.js"></script> @*Main file which does convert the content to base64  *@
+    <script src="/Scripts/Export/html2canvas.js"></script> @*Main file which does export to image feature *@
+    <script src="/Scripts/Export/jspdf/libs/base64.js"></script> @*Main file which does  convert the content to base64 for pdf *@
+    <script src="/Scripts/Export/jspdf/libs/sprintf.js"></script> @*Main file which does export feature for pdf *@
+    <script src="/Scripts/Export/jspdf/jspdf.js"></script> @*Main file which does export feature for pdf *@
+    <script src="/Scripts/jquery.tablesorter.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('#exportexcel').bind('click', function (e) {
+            $('#export').tableExport({ type: 'excel', escape: 'false' });
+        });
+        $('#exportpdf').bind('click', function (e) {
+            $('#export').tableExport({ type: 'pdf', escape: 'false' });
+        });
+
+        $("#export").tablesorter();
+    });
+    </script>
+
+</head>
+<body>
+    <div class="container" style="padding-left: 0px; padding-right:0px;">
+        <header class="header dark-bg">
+            <div class="toggle-nav">
+                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom">
+                </div>
+            </div>
+            <div class="row">
+                <div class="span12">
+                    <a href="~/Login/ReportingHome" class="logo"> <span class="lite"><img alt="" src="/img/t15.png" class="headerImg"></span></a>
+                    <div class="top-nav notification-row">
+
+                        <div style="padding: 15px; float:right;">
+                            <b class="caret"></b>
+                            <a href="/Login/Logout" style="color: white">Logout</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--logo end-->
+        </header>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="SecondHeader">
+                    Search
+                    <div style="float: right; font-size: 16px;">
+                        Welcome, @Session["name"].ToString()
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div id='cssmenu' class="menu">
+                    <ul>
+                        <li><a href='~/Login/ReportingHome'><span>Home</span></a></li>
+                        <li><a href='~/Login/Search'><span>Search</span></a></li>
+                        <li><a href='~/Login/StageWiseReport'><span>Stage-Wise Report</span></a></li>
+                        <li><a href='~/Login/DelinquentCustomers'><span>Delinquent Customers</span></a></li>
+                        <li><a href='~/Login/TreatmentHistory'><span>Treatment History</span></a></li>
+                        <li><a href='~/Login/DisconnectedCustomers'><span>Disconnected Customers</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div id='content'>
+                    <div id='SearchWrapper'>
+                        <form method="post" action="/Login/Search">
+                            <div class="col-md-5">
+                                <input type="text" id="customerName" name="customerName" placeholder="Customer Name" />
+                            </div>
+                            <div class="col-xs-6 col-md-5">
+                                <input type="text" id="zipCode" name="zipCode" placeholder="Zip Code" />
+                            </div>
+                            <center>
+                                <input type="submit" id="login-submit" value="Search" class="button"  />
+                            </center>
+                        </form>
+                    </div>
+                </div>
+                <div id='content' style="top:100px">
+                   
+                    <table id="export" class="TFtable tablesorter">
+                        <thead>
+                            <tr>
+                                <th>Customer Id</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Customer Status </th>
+                                <th>Zip Code</th>
+                                <th>Email</th>
+                                <th>Contact Number</th>
+                                <th>Due Amount</th>
+                                <th>Payment Date</th>
+                                
+                            </tr>
+                        </thead>
+                        @foreach (var obj in Model)
+                        {
+                            <tr>
+                                <td>@obj.customerId.ToString()</td>
+                                <td>@obj.firstName.ToString()</td>
+                                <td>@obj.lastName.ToString()</td>
+                                <td>@obj.consumerStatus.ToString()</td>
+                                <td>@obj.zipCode.ToString()</td>
+                                <td>@obj.email.ToString()</td>
+                                <td>@obj.contactNumber.ToString()</td>
+                                <td>@obj.dueAmount.ToString()</td>
+                                <td>@obj.paymentDate.ToString()</td>                               
+
+                            </tr>
+                        }
+
+                    </table>
+                    <!-- Footer Start -->
+                    <div id='SearchWrapper' style="margin-top:40px;">
+                        <div class="col-md-4">
+                            <input type="button" id="exportpdf" value="Export As PDF" class="button" style="width: 100%; margin:10px; margin-left:0px;" />
+                        </div>
+                        <div class="col-md-4">
+                            <input type="button" id="exportexcel" value="Export As Excel Sheet" class="button" style="width: 100%; margin:10px; margin-left:0px; " />
+                        </div>
+                        <div class="col-md-4">
+                            <input type="button" id="delEmail" value="Export To Email" class="button" style="width: 100%; margin:10px; margin-left:0px;" />
+                        </div>
+                    </div>
+                    <!-- Footer End -->
+                </div>
+
+            </div>
+
+            
+        </div>
+    </div>
+</body>
+</html>

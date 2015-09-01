@@ -1,0 +1,126 @@
+﻿@model List<string>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage Wise Report</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/grid.css" rel="stylesheet">
+    <link href="/css/MenuFlyoutCss.css" rel="stylesheet">
+    <link href="/css/table.css" rel="stylesheet">
+    <link href="/css/common.css" rel="stylesheet">
+    <link href="/css/03.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header dark-bg">
+            <div class="toggle-nav">
+                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"></div>
+            </div>
+            <div class="row">
+                <div class="span12">
+                    <a href="/Login/ReportingHome" class="logo"> <span class="lite"><img alt="" src="/img/t15.png" class="headerImg"></span></a>
+                    <div class="top-nav notification-row">
+
+                        <div style="padding: 15px; float:right;">
+                            <b class="caret"></b>
+                            <a href="/Login/Logout" style="color: white">Logout</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--logo end-->
+        </header>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="SecondHeader">
+                    Stage-Wise Report
+                    <div style="float: right; font-size: 16px;">
+                        Welcome, @Session["name"].ToString()
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div id='cssmenu' class="menu">
+                    <ul>
+                        <li><a href='/Login/ReportingHome'><span>Home</span></a></li>
+                        <li><a href='/Login/Search'><span>Search</span></a></li>
+                        <li><a href='/Login/StageWiseReport'><span>Stage-Wise Report</span></a></li>
+                        <li><a href='/Login/DelinquentCustomers'><span>Delinquent Customers</span></a></li>
+                        <li><a href='/Login/TreatmentHistory'><span>Treatment History</span></a></li>
+                        <li><a href='/Login/DisconnectedCustomers'><span>Disconnected Customers</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-10">
+                <!--Graph Start  -->
+                <!-- <div id="content" style="font-size: 18px;"> -->
+                <div class="toggles" style="top:50px; position: relative;">
+                    <p><a href="#" id="reset-graph-button">Reset graph</a>
+                </div>
+                <div id="wrapper">
+                    <div class="chart">
+                        <h2>Stage &ndash; Wise Report</h2>
+                        <table id="data-table" border="1" cellpadding="10" cellspacing="0">
+                            <caption>Number Of Customers</caption>
+                            <thead>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <th scope="col">1</th>
+                                    <th scope="col">2</th>
+                                    <th scope="col">3</th>
+                                    <th scope="col">4</th>
+                                    <th scope="col">5</th>
+                                    <th scope="col">6</th>
+                                    <th scope="col">7</th>
+                                    <th scope="col">8</th>
+                                    <th scope="col">9</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Stages</th>
+                                    @foreach (var value in Model)
+                                    {
+                                        <td>@value</td>
+                                    }
+                                    @*<td>6080</td>
+                                    <td>6240</td>
+                                    <td>3520</td>
+                                    <td>2240</td>
+                                    <td>6080</td>
+                                    <td>6240</td>
+                                    <td>3520</td>
+                                    <td>2240</td>*@
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <ul class="legend" style="width:100%; height:130px; margin-top:150px;">
+                            <li><span class="icon fig0"></span>Day 1 - Day 4</li>
+                            <li><span class="icon fig1"></span>Day 5 - Day 7</li>
+                            <li><span class="icon fig2"></span>Day 8 - Day 11</li>
+                            <li><span class="icon fig3"></span>Day 12 - Day 18</li>
+                            <li><span class="icon fig4"></span>Day 19 - Day 21</li>
+                            <li><span class="icon fig5"></span>Day 22</li>
+                            <li><span class="icon fig6"></span>Day 23 - Day 25</li>
+                            <li><span class="icon fig7"></span>Day 26 - Day 29</li>
+                            <li><span class="icon fig8"></span>Day 30</li>
+                        </ul>
+                    </div>
+                </div>
+            </div> <!--Graph End  -->
+        </div>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>   
+    <script src="~/Scripts/03.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+﻿@model String
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="~/css/bootstrap.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet">
+    <link href="~/css/grid.css" rel="stylesheet">
+    <link href="~/css/LoginCss.css" rel="stylesheet">
+    
+    <script src="~/Scripts/JavaScript.js"></script>
+    <script src="~/Scripts/login.js"></script>
+
+</head>
+<body>
+    <header class="header dark-bg">
+        <div class="toggle-nav">
+            <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"></div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                <a href="#" class="logo"> <span class="lite"><img alt="" src="/img/t15.png" style="width: 55px; height: 60px; margin-left: -20px; margin-top: -15px;"></span></a>
+            </div>
+        </div>
+        <!--logo end-->
+    </header>
+    <div class="container">
+        <div class="flat-form Grid-cell--center">
+            <ul class="tabs">
+                <li> <b> LOGIN </b> </li>
+            </ul>
+            <div id="login" class="form-action show">
+                <h1>Finance</h1>
+                <label> @Model.ToString() </label>
+                <form action="/Login/loginPage" method="post">
+                    <ul>
+                        <li>
+                            <input type="text" name="loginName" id="loginName" placeholder="Username" />
+                        </li>
+                        <li>
+                            <input type="password" name="loginPassword" id="loginPassword" placeholder="Password" />
+                        </li>
+                        <li>
+                            <center>
+                                <input type="submit" id="login-submit" value="Login" class="button" />
+                            </center>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

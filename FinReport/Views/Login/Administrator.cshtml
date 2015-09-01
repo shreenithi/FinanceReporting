@@ -1,0 +1,71 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home</title>
+    
+    <link href="~/css/bootstrap.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet">
+    <link href="~/css/grid.css" rel="stylesheet">
+    <link href="~/css/MenuFlyoutCss.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <div>
+            <header class="header dark-bg">
+                <div class="toggle-nav">
+                    <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"></div>
+                </div>
+                <div class="row">
+                    <div class="span12">
+                        <a href="#" class="logo"> <span class="lite"><img class="headerImg" alt="" src="/img/t15.png" /></span></a>
+                        <div class="top-nav notification-row">
+
+                            <div style="padding: 15px; float:right;">
+                                <b class="caret"></b>
+                                <a href="/Login/Logout" style="color: white">Logout</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--logo end-->
+            </header>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="SecondHeader">
+                    Admin Home
+                    <div style="float: right; font-size: 16px;">
+                        Welcome, @Session["name"].ToString()
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div id="content">
+            <div class="row">
+                <div class="col-sm-4">
+                    <a href="http://192.168.1.15:8080/CFO/CollectionsHome.html"><img src="~/img/Collections.png" onmouseover="this.src='/img/CollectionsClick.png'" onmouseout="this.src = '/img/Collections.png'" width="175px" vspace="50" hspace="40" height="200px" /></a>
+                </div>
+
+                <div class="col-sm-4">
+                    <a href="~/Login/ReportingHome"><img src="~/img/Reporting.png" onmouseover="this.src = '/img/ReportingClick.png'" onmouseout="this.src = '/img/Reporting.png'" width="175px" vspace="50" hspace="40" height="200px" /></a>
+                </div>
+
+                <div class="col-sm-4">
+                    <a href="http://192.168.1.15:8080/CFO/RepPage.html"><img src="~/img/Representative.png" onmouseover="this.src = '/img/RepresentativeClick.png'" onmouseout="this.src = '/img/Representative.png'" width="175px" vspace="50" hspace="40" height="200px" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Report Home</title>
+    <link href="~/css/bootstrap.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet">
+    <link href="~/css/grid.css" rel="stylesheet">
+    <link href="~/css/MenuFlyoutCss.css" rel="stylesheet">
+    <link href="~/css/table.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container" style="padding-left: 0px; padding-right:0px;">
+        <header class="header dark-bg">
+            <div class="toggle-nav">
+                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"></div>
+            </div>
+            <div class="row">
+                <div class="span12">
+                    <a href="index.html" class="logo"> <span class="lite"><img alt="" src="~/img/img/t15.jpg"></span></a>
+                </div>
+            </div>
+            <!--logo end-->
+        </header>
+        <div class="row">
+            <div class="col-md-2">
+                <div id='cssmenu' class="menu">
+                    <ul>
+                        <li><a href='~/Login/Reporting'><span>Home</span></a></li>
+                        <li><a href='Search.html'><span>Search</span></a></li>
+                        <li><a href='StageWiseReport.html'><span>Stage-Wise Report</span></a></li>
+                        <li><a href='DelinquentCustomers.html'><span>Delinquent Customers</span></a></li>
+                        <li><a href='TreatmentHistory.html'><span>Treatment History</span></a></li>
+                        <li><a href='DisconnectedCustomers.html'><span>Disconnected Customers</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div id='content'>
+                    Welcome to Finance Reporting Home Page.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\inetpub\wwwroot</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Common.Logging.dll">
+      <publishTime>08/27/2015 19:17:41</publishTime>
+    </File>
+    <File Include="bin/FinReport.dll">
+      <publishTime>08/28/2015 17:09:03</publishTime>
+    </File>
+    <File Include="bin/itextsharp.dll">
+      <publishTime>05/07/2015 12:44:25</publishTime>
+    </File>
+    <File Include="bin/itextsharp.pdfa.dll">
+      <publishTime>05/07/2015 12:44:20</publishTime>
+    </File>
+    <File Include="bin/libeay32.dll">
+      <publishTime>08/27/2015 19:18:04</publishTime>
+    </File>
+    <File Include="bin/libgcc_s_dw2-1.dll">
+      <publishTime>08/27/2015 19:18:04</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>08/24/2015 15:35:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>08/24/2015 15:35:52</publishTime>
+    </File>
+    <File Include="bin/mingwm10.dll">
+      <publishTime>08/27/2015 19:18:04</publishTime>
+    </File>
+    <File Include="bin/Oracle.DataAccess.dll">
+      <publishTime>12/16/2014 06:44:56</publishTime>
+    </File>
+    <File Include="bin/Pechkin.dll">
+      <publishTime>08/27/2015 19:18:04</publishTime>
+    </File>
+    <File Include="bin/Pechkin.Synchronized.dll">
+      <publishTime>08/27/2015 19:18:06</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>08/24/2015 15:35:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>08/24/2015 15:35:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>08/24/2015 15:35:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>08/24/2015 15:35:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>08/24/2015 15:35:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>08/24/2015 15:35:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>08/24/2015 15:35:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>08/24/2015 15:35:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>08/24/2015 15:35:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>08/24/2015 15:35:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>08/24/2015 15:35:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>08/24/2015 15:35:52</publishTime>
+    </File>
+    <File Include="bin/ssleay32.dll">
+      <publishTime>08/27/2015 19:18:04</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>08/24/2015 15:35:51</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>08/24/2015 15:35:52</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>08/24/2015 15:35:51</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Deployment.dll">
+      <publishTime>08/24/2015 15:35:51</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.dll">
+      <publishTime>08/24/2015 15:35:51</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Razor.dll">
+      <publishTime>08/24/2015 15:35:51</publishTime>
+    </File>
+    <File Include="bin/wkhtmltox0.dll">
+      <publishTime>08/27/2015 19:18:04</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>08/24/2015 18:29:19</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>08/24/2015 18:29:19</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>08/24/2015 18:29:18</publishTime>
+    </File>
+    <File Include="css/03.css">
+      <publishTime>08/27/2015 16:59:23</publishTime>
+    </File>
+    <File Include="css/bootstrap.css">
+      <publishTime>08/24/2015 18:47:47</publishTime>
+    </File>
+    <File Include="css/CheckBox.css">
+      <publishTime>08/26/2015 12:20:20</publishTime>
+    </File>
+    <File Include="css/common.css">
+      <publishTime>08/27/2015 16:59:37</publishTime>
+    </File>
+    <File Include="css/grid.css">
+      <publishTime>08/26/2015 11:53:01</publishTime>
+    </File>
+    <File Include="css/LoginCss.css">
+      <publishTime>08/26/2015 18:06:42</publishTime>
+    </File>
+    <File Include="css/MenuFlyoutCss.css">
+      <publishTime>08/28/2015 14:10:24</publishTime>
+    </File>
+    <File Include="css/style.css">
+      <publishTime>08/24/2015 18:47:47</publishTime>
+    </File>
+    <File Include="css/styleTable.css">
+      <publishTime>08/28/2015 14:10:10</publishTime>
+    </File>
+    <File Include="css/table.css">
+      <publishTime>08/28/2015 14:10:09</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>08/24/2015 18:29:19</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>08/24/2015 18:29:19</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>08/24/2015 18:29:19</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>08/24/2015 18:29:19</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>08/24/2015 15:35:51</publishTime>
+    </File>
+    <File Include="img/asc.gif">
+      <publishTime>08/28/2015 10:23:11</publishTime>
+    </File>
+    <File Include="img/bg.gif">
+      <publishTime>08/28/2015 10:23:11</publishTime>
+    </File>
+    <File Include="img/Collections.png">
+      <publishTime>08/26/2015 17:23:55</publishTime>
+    </File>
+    <File Include="img/CollectionsClick.png">
+      <publishTime>08/26/2015 17:23:55</publishTime>
+    </File>
+    <File Include="img/desc.gif">
+      <publishTime>08/28/2015 10:23:11</publishTime>
+    </File>
+    <File Include="img/Reporting.png">
+      <publishTime>08/26/2015 17:23:55</publishTime>
+    </File>
+    <File Include="img/ReportingClick.png">
+      <publishTime>08/26/2015 17:23:55</publishTime>
+    </File>
+    <File Include="img/Representative.png">
+      <publishTime>08/26/2015 17:23:55</publishTime>
+    </File>
+    <File Include="img/RepresentativeClick.png">
+      <publishTime>08/26/2015 17:23:55</publishTime>
+    </File>
+    <File Include="img/t15.png">
+      <publishTime>08/26/2015 17:23:19</publishTime>
+    </File>
+    <File Include="libeay32.dll">
+      <publishTime>08/27/2015 19:18:04</publishTime>
+    </File>
+    <File Include="libgcc_s_dw2-1.dll">
+      <publishTime>08/27/2015 19:18:04</publishTime>
+    </File>
+    <File Include="mingwm10.dll">
+      <publishTime>08/27/2015 19:18:04</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>08/27/2015 19:18:07</publishTime>
+    </File>
+    <File Include="Scripts/03.js">
+      <publishTime>08/27/2015 18:21:46</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>08/24/2015 18:29:19</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>08/24/2015 18:29:19</publishTime>
+    </File>
+    <File Include="Scripts/Export/html2canvas.js">
+      <publishTime>08/27/2015 20:14:51</publishTime>
+    </File>
+    <File Include="Scripts/Export/jquery.base64.js">
+      <publishTime>08/27/2015 20:14:33</publishTime>
+    </File>
+    <File Include="Scripts/Export/jspdf/jspdf.js">
+      <publishTime>08/27/2015 20:15:22</publishTime>
+    </File>
+    <File Include="Scripts/Export/jspdf/libs/base64.js">
+      <publishTime>08/27/2015 20:15:39</publishTime>
+    </File>
+    <File Include="Scripts/Export/jspdf/libs/sprintf.js">
+      <publishTime>08/27/2015 20:15:39</publishTime>
+    </File>
+    <File Include="Scripts/Export/tableExport.js">
+      <publishTime>08/28/2015 11:35:50</publishTime>
+    </File>
+    <File Include="Scripts/FromSearch.js">
+      <publishTime>08/26/2015 14:53:07</publishTime>
+    </File>
+    <File Include="Scripts/JavaScript.js">
+      <publishTime>08/25/2015 14:20:29</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>08/24/2015 18:29:19</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>08/24/2015 18:29:19</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>08/24/2015 18:29:19</publishTime>
+    </File>
+    <File Include="Scripts/jquery.tablesorter.js">
+      <publishTime>08/28/2015 10:44:26</publishTime>
+    </File>
+    <File Include="Scripts/login.js">
+      <publishTime>08/26/2015 13:20:55</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>08/24/2015 18:29:20</publishTime>
+    </File>
+    <File Include="ssleay32.dll">
+      <publishTime>08/27/2015 19:18:04</publishTime>
+    </File>
+    <File Include="Views/Login/Administrator.cshtml">
+      <publishTime>08/28/2015 13:00:09</publishTime>
+    </File>
+    <File Include="Views/Login/Collections.cshtml">
+      <publishTime>08/27/2015 21:19:06</publishTime>
+    </File>
+    <File Include="Views/Login/DelinquentCustomers.cshtml">
+      <publishTime>08/28/2015 16:51:53</publishTime>
+    </File>
+    <File Include="Views/Login/DisconnectedCustomers.cshtml">
+      <publishTime>08/28/2015 16:51:53</publishTime>
+    </File>
+    <File Include="Views/Login/loginPage.cshtml">
+      <publishTime>08/26/2015 18:08:17</publishTime>
+    </File>
+    <File Include="Views/Login/Logout.cshtml">
+      <publishTime>08/27/2015 19:44:59</publishTime>
+    </File>
+    <File Include="Views/Login/ReportingHome.cshtml">
+      <publishTime>08/27/2015 21:19:06</publishTime>
+    </File>
+    <File Include="Views/Login/Search.cshtml">
+      <publishTime>08/28/2015 16:51:53</publishTime>
+    </File>
+    <File Include="Views/Login/StageWiseReport.cshtml">
+      <publishTime>08/27/2015 21:32:43</publishTime>
+    </File>
+    <File Include="Views/Login/TreatmentHistory.cshtml">
+      <publishTime>08/28/2015 12:46:59</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>08/26/2015 17:08:02</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/28/2015 17:09:04</publishTime>
+    </File>
+    <File Include="wkhtmltox0.dll">
+      <publishTime>08/27/2015 19:18:04</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

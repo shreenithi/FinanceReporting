@@ -1,0 +1,154 @@
+﻿@model List<FinReport.Models.ActionModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Treatment History</title>
+
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/grid.css" rel="stylesheet">
+    <link href="/css/MenuFlyoutCss.css" rel="stylesheet">
+    <link href="/css/table.css" rel="stylesheet">
+    <link href="/css/styleTable.css" rel="stylesheet">
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="/Scripts/Export/tableExport.js"></script> @*Main file which does export feature *@
+    <script src="/Scripts/Export/jquery.base64.js"></script> @*Main file which does convert the content to base64  *@
+    <script src="/Scripts/Export/html2canvas.js"></script> @*Main file which does export to image feature *@
+    <script src="/Scripts/Export/jspdf/libs/base64.js"></script> @*Main file which does  convert the content to base64 for pdf *@
+    <script src="/Scripts/Export/jspdf/libs/sprintf.js"></script> @*Main file which does export feature for pdf *@
+    <script src="/Scripts/Export/jspdf/jspdf.js"></script> @*Main file which does export feature for pdf *@
+    <script src="/Scripts/jquery.tablesorter.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('#exportexcel').bind('click', function (e) {
+            $('#export').tableExport({ type: 'excel', escape: 'false' });
+        });
+        $('#exportpdf').bind('click', function (e) {
+            $('#export').tableExport({ type: 'pdf', escape: 'false' });
+        });
+
+        $("#export").tablesorter();
+    });
+    </script>
+</head>
+
+<body>
+    <div class="container" style="padding-left: 0px; padding-right:0px;">
+        <header class="header dark-bg">
+            <div class="toggle-nav">
+                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom">
+                </div>
+            </div>
+            <div class="row">
+                <div class="span12">
+                    <a href="/Login/ReportingHome" class="logo"> <span class="lite"><img alt="" src="/img/t15.png" class="headerImg"></span></a>
+
+                    <div class="top-nav notification-row">
+
+                        <div style="padding: 15px; float:right;">
+                            <b class="caret"></b>
+                            <a href="/Login/Logout" style="color: white">Logout</a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <!--logo end-->
+
+        </header>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="SecondHeader">
+                    Treatment History
+                    <div style="float: right; font-size: 16px;">
+                        Welcome, @Session["name"].ToString()
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <div id='cssmenu' class="menu">
+                    <ul>
+                        <li><a href='~/Login/ReportingHome'><span>Home</span></a></li>
+                        <li><a href='~/Login/Search'><span>Search</span></a></li>
+                        <li><a href='~/Login/StageWiseReport'><span>Stage-Wise Report</span></a></li>
+                        <li><a href='~/Login/DelinquentCustomers'><span>Delinquent Customers</span></a></li>
+                        <li><a href='~/Login/TreatmentHistory'><span>Treatment History</span></a></li>
+                        <li><a href='~/Login/DisconnectedCustomers'><span>Disconnected Customers</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-10">
+                <div id='content'>
+                    <div id='SearchWrapper' style="margin-bottom: 0px">
+                        <form method="post" action="/Login/TreatmentHistory">
+                            <div class="col-md-6">
+                                <input type="text" id="treatmentAccNo" name="treatmentAccNo" placeholder="Customer Account No." />
+                            </div>
+
+                            <div class="col-xs-6 col-md-5">
+                            </div>
+
+                            <center>
+                                <input type="submit" id="treatmentView" value="View" class="button" />
+                            </center>
+                        </form>
+                    </div>
+                </div>
+
+                <div id='content' style="top:100px">
+                    <table id="export" class="TFtable tablesorter">
+                        <thead>
+                            <tr>
+                                <th>Customer Status</th>
+                                <th>Action Date</th>
+                                <th>Action Type</th>
+                            </tr>
+                        </thead>
+                        @foreach (var obj in Model)
+                        {
+                            <tr>
+                                
+                                <td>@obj.status.ToString()</td>
+                                <td>@obj.actionDate.ToString()</td>
+                                <td>@obj.actionType.ToString()</td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+            </div>
+            <!-- Footer Start -->
+            <div id='SearchWrapper' style="margin-top:40px;">
+                <div class="col-md-4">
+                    <input type="button" id="exportpdf" value="Export As PDF" class="button" style="width: 100%; margin:10px; margin-left:0px;" />
+                </div>
+                <div class="col-md-4">
+                    <input type="button" id="exportexcel" value="Export As Excel Sheet" class="button" style="width: 100%; margin:10px; margin-left:0px; " />
+                </div>
+                <div class="col-md-4">
+                    <input type="button" id="delEmail" value="Export To Email" class="button" style="width: 100%; margin:10px; margin-left:0px;" />
+                </div>
+            </div>
+            <!-- Footer End -->
+        </div>
+    </div>
+
+</body>
+</html>

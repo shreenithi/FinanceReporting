@@ -1,0 +1,34 @@
+#data-table {
+	display: none;
+}
+.bar span {
+	background: #fefefe;/* url(../images/info-bg.gif) 0 100% repeat-x;*/
+}
+.fig0 {
+	background: #747474; /*url(../images/bar-01-bg.gif) 0 0 repeat-y;*/
+}
+.fig1 {
+	background: #dc61ca; /*url(../images/bar-02-bg.gif) 0 0 repeat-y;*/
+}
+.fig2 {
+	background: #9681e0; /*url(../images/bar-03-bg.gif) 0 0 repeat-y*/
+}
+
+.fig3 {
+	background: #4c3eff; 
+}
+.fig4 {
+	background: #65c2e8; 
+}
+.fig5 {
+	background: #90ff7d; 
+}
+.fig6 {
+	background: #f9ff67; 
+}
+.fig7 {
+	background: #eea151; 
+}
+.fig8 {
+	background: #dc3939; 
+}
