@@ -87,11 +87,11 @@ namespace FinReport.tools
                 SearchModel temp = new SearchModel();
                 temp.customerId = reader["customerid"].ToString();
                 temp.firstName = reader["firstname"].ToString();
-                temp.lastName = reader["last_name"].ToString();
+                temp.lastName = reader["lastname"].ToString();
                 temp.consumerStatus = (reader["customerstatus"]).ToString();
                 temp.zipCode = reader["zipcode"].ToString();
                 temp.email = reader["email"].ToString();
-                temp.contactNumber = (reader["contact_number"]).ToString();
+                temp.contactNumber = (reader["contactnumber"]).ToString();
                 temp.dueAmount = reader["due_amount"].ToString();                
                 temp.paymentDate = reader["payment_date"].ToString();
                 temp.paymentDate = Regex.Replace(temp.paymentDate, "12:00:00 AM", "");
