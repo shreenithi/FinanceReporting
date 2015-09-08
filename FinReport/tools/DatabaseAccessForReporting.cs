@@ -206,7 +206,7 @@ namespace FinReport.tools
         public List<int> jsonQueryList()
         {
             EstablishConnection();
-            OracleCommand command = new OracleCommand("SELECT account_number from dlqtable", conn);
+            OracleCommand command = new OracleCommand("SELECT account_number from dlqtable WHERE account_number NOT IN (SELECT customerid FROM fincustomerdata)", conn);
             //conn.Open();
             List<int> listOfId = new List<int>();
             OracleDataReader reader = command.ExecuteReader();
@@ -258,7 +258,6 @@ namespace FinReport.tools
                     catch(Exception e)
                     {
                         Console.WriteLine(e.Message);
-                        int i = 9;
                     }
                 }
             }

@@ -50,9 +50,8 @@ namespace FinReport.Controllers
             }
             else if (role == "Reporting")
             {
-               //user userObj = new user();//REMOVE
-                //userObj.populatingDb();
-                //ProfilePullHelper.PullProfile("1000000");
+                user userObj = new user();
+                userObj.populatingDb();
                 Session["name"] = loginName;
                 Response.Redirect("ReportingHome");
                
