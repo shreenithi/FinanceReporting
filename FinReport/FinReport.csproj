@@ -60,7 +60,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Oracle.DataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
+    <Reference Include="Oracle.DataAccess, Version=2.111.7.20, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SelfServiceDemo\SelfServiceDemo\bin\Oracle.DataAccess.dll</HintPath>
+    </Reference>
     <Reference Include="Pechkin, Version=0.5.8.1, Culture=neutral, processorArchitecture=x86">
       <HintPath>..\packages\Pechkin.0.5.8.1\lib\net40\Pechkin.dll</HintPath>
       <Private>True</Private>
@@ -187,9 +190,6 @@
     <Compile Include="tools\DatabaseLinkingString.cs" />
     <Compile Include="tools\DeserliazingJson.cs" />
     <Compile Include="tools\FinLoginValidation.cs" />
-    <Compile Include="tools\PDFConversion.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

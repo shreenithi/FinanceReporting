@@ -12,12 +12,12 @@ namespace FinReport.tools
 {
     public class ProfilePullHelper
     {
-        private static string profilePullUrl = "http://192.168.1.19:8080/OrderManagement/rest/om/profilePull/";
+        private static string profilePullUrl = "http://localhost:8080/OrderManagement/rest/om/profilePull/";
 
         public static ProfilePull PullProfile(string customerId)
         {
             ProfilePull customerProfile = null;
-            string url = profilePullUrl + "42";//customerid
+            string url = profilePullUrl + customerId;
             string customerProfileJson = GetJsonFromUrl(url);
             //string customerProfileJson = File.ReadAllText("D:\\profile.json");//give json file path here
             if (!String.IsNullOrWhiteSpace(customerProfileJson))
@@ -51,6 +51,8 @@ namespace FinReport.tools
             T temp = convertor.Deserialize<T>(json);
             return temp;
         }
+
+
 
 
     }

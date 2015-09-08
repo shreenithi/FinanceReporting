@@ -135,7 +135,8 @@ p{
 input:focus{
   background-color:yellow;
 }
-.button:focus{
+
+.form button:focus{
     background-color: #da031c;
 }
 }

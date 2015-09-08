@@ -34,23 +34,25 @@ namespace FinReport.Controllers
                 //Admin page call statements
                 Session["name"] = loginName;
                Response.Redirect("Administrator");
+               
             }
             else if (role == "Representative")
             {
                 Session["name"] = loginName;
-                Response.Redirect("http://192.168.1.15:8080/CFO/RepPage.html");
+                Response.Redirect("http://localhost:8080/CFO/RepPage.html");
 
             }
             else if (role == "Collection")
             {
                 Session["name"] = loginName;
-                Response.Redirect("http://192.168.1.15:8080/CFO/CollectionsHome.html");
+                Response.Redirect("http://localhost:8080/CFO/CollectionsHome.html");
 
             }
             else if (role == "Reporting")
             {
-                user userObj = new user();
-                userObj.populatingDb();
+               //user userObj = new user();//REMOVE
+                //userObj.populatingDb();
+                //ProfilePullHelper.PullProfile("1000000");
                 Session["name"] = loginName;
                 Response.Redirect("ReportingHome");
                

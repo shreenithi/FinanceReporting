@@ -37,6 +37,7 @@ namespace FinReport.tools
                 command.Parameters.Add(":username", finUserName);
                 command.Parameters.Add(":password", finPwd);            
                 finDept = command.ExecuteScalar().ToString();
+                conn.Close();
             }
             catch (Exception ex)
             {

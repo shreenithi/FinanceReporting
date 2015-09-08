@@ -38,7 +38,7 @@ namespace FinReport.tools
            
             if (!name.Equals("") && zipCode.Equals(""))
             {
-                command.CommandText = "SELECT f.customerid,f.firstname,f.lastname,f.customerstatus,f.zipcode,f.email,f.contactnumber,d.due_amount,((SELECT SYSDATE FROM DUAL) - d.days_elapsed) AS payment_date FROM fincustomerdata f, dlqtable d  WHERE f.customerid = d.account_number AND f.firstname like '%' || :name1 || '%' ";
+                command.CommandText = "SELECT f.customerid,f.firstname,f.lastname,f.customerstatus,f.zipcode,f.email,f.contactnumber,d.due_amount,((SELECT SYSDATE FROM DUAL) - d.days_elapsed) AS payment_date FROM fincustomerdata f, dlqtable d  WHERE f.customerid = d.account_number AND f.firstname like '%' || :name || '%' ";
                 command.Parameters.Add(":name", name);
             }
 
@@ -50,7 +50,7 @@ namespace FinReport.tools
 
             else if (!name.Equals("") && (!zipCode.Equals("")))
             {       
-                command.CommandText = "SELECT f.customerid,f.firstname,f.lastname,f.customerstatus,f.zipcode,f.email,f.contactnumber,d.due_amount,((SELECT SYSDATE FROM DUAL) - d.days_elapsed) AS payment_date FROM fincustomerdata f, dlqtable d  WHERE f.customer_id = d.account_number AND f.firstname like '%' || :name1 || '%' AND f.zipcode = :zip1";
+                command.CommandText = "SELECT f.customerid,f.firstname,f.lastname,f.customerstatus,f.zipcode,f.email,f.contactnumber,d.due_amount,((SELECT SYSDATE FROM DUAL) - d.days_elapsed) AS payment_date FROM fincustomerdata f, dlqtable d  WHERE f.customerid = d.account_number AND f.firstname like '%' || :name1 || '%' AND f.zipcode = :zip1";
                 command.Parameters.Add(":name1", name);
                 command.Parameters.Add(":zip1", zipCode);                  
             }
@@ -155,6 +155,7 @@ namespace FinReport.tools
             StageValue = command.ExecuteScalar().ToString();
             StageList.Add(StageValue);
 
+            conn.Close();
             return StageList;
         }
         public List<ActionModel> searchTreatment(string customerId)
@@ -173,6 +174,7 @@ namespace FinReport.tools
                 temp.actionType = (reader["action_type"]).ToString();
                 list.Add(temp);
             }
+            conn.Close();
             return list;
         }
         public List<SearchModel> SearchByDisconnected()
@@ -222,16 +224,21 @@ namespace FinReport.tools
         public void populatingCustomerDb()
         {
            
-            EstablishConnection();
-            OracleCommand command = new OracleCommand();
-            command.Connection = conn;
+           
+           
             List<int> idList = jsonQueryList();
             foreach (var temp in idList)
             {
                 ProfilePull customerPull = ProfilePullHelper.PullProfile(Convert.ToString(temp));                
-                if(customerPull!=NULL)
+                if(customerPull!=null)
                 {
-                  command.CommandText = "INSERT INTO fincustomerdata VALUES(:customerIDP, :firstNameP, :lastNameP, :customerStatusP, :streetNameP, :zipCodeP, :cityP, :stateP, :countryP, :emailP, :contactNumberP, :dateOfBirthP)";
+                    try
+                    {
+
+                        OracleCommand command = new OracleCommand();
+                        command.Connection = conn;
+                        EstablishConnection();
+                    command.CommandText = @"INSERT INTO fincustomerdata VALUES(:customerIDP, :firstNameP, :lastNameP, :customerStatusP, :streetNameP, :zipCodeP, :cityP, :stateP, :countryP, :emailP, :contactNumberP, TO_DATE(:dateOfBirthP,'YYYY-MM-DD'))";
                   command.Parameters.Add(":customerIDP", customerPull.customerdetails.customerid);
                   command.Parameters.Add(":firstNameP", customerPull.customerdetails.fname);
                   command.Parameters.Add(":lastNameP", customerPull.customerdetails.lname);
@@ -246,9 +253,16 @@ namespace FinReport.tools
                   command.Parameters.Add(":dateOfBirthP", customerPull.customerdetails.dateofbirth);
                 
                   command.ExecuteNonQuery();
+                    conn.Close();
+                    }
+                    catch(Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                        int i = 9;
+                    }
                 }
             }
-            conn.Close();
+           
         }
     }
 }
