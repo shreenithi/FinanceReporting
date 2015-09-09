@@ -139,6 +139,9 @@ input:focus{
 .form button:focus{
     background-color: #da031c;
 }
+
+.flat-form button:focus{
+    background-color: #da031c;
 }
 .flat-form {
   background: #e8e8e8;  /*tablebg e74c3c #34495e  #88565b ed7271*/
