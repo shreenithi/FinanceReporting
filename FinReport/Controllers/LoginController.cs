@@ -50,8 +50,6 @@ namespace FinReport.Controllers
             }
             else if (role == "Reporting")
             {
-                user userObj = new user();
-                userObj.populatingDb();
                 Session["name"] = loginName;
                 Response.Redirect("ReportingHome");
                
